@@ -19,12 +19,10 @@ function getComputerChoice() {
             return "scissors";
     }
 }
-console.log("Bot Choice :" + " " + getComputerChoice());
-
 
 // User Choice
 
-function getHumanChoice() {
+function getHumanChoice(userChoice) {
     userChoice = userChoice.toLowerCase();
     if (userChoice === "rock" || userChoice === "paper" || userChoice === "scissors") {
         return userChoice;
@@ -32,9 +30,8 @@ function getHumanChoice() {
         return ("Invalid Choice! Enter 'rock','paper' or 'scissors'.")
     }
 }
-console.log("Your Choice : " + ' ' + getHumanChoice());
 
-// Single Round
+// // Single Round
 
 function playRound(humanChoice, computerChoice) {
 
@@ -55,10 +52,16 @@ function playRound(humanChoice, computerChoice) {
                 result = "Invalid Choice";
         }
     }
-    console.log(result);
+    return result;
 }
 
-const humanSelection = getHumanChoice();
+const humanSelection = getHumanChoice(userChoice);
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+const roundResult = playRound(humanSelection, computerSelection);
+
+// Result Console
+
+console.log("Bot Choice :" + " " + getComputerChoice());
+console.log("Your Choice : " + ' ' + getHumanChoice());
+console.log(roundResult);
