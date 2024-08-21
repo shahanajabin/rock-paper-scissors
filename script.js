@@ -1,12 +1,23 @@
-// Variables
-let userChoice = prompt("Enter your Choice..!");
+// variables
+
+let userChoice;
 let computerChoice;
 let humanScore = 0;
 let computerScore = 0;
 let result;
 
+// User Choice
 
-// Computer Choice 
+function getHumanChoice(userChoice) {
+    let choice = userChoice.toLowerCase()
+    if (choice === "rock" || choice === "paper" || choice === "scissors") {
+        return choice;
+    } else {
+        return ("Invalid Choice! Enter 'rock','paper' or 'scissors'.")
+    }
+}
+
+// Computer Choice
 
 function getComputerChoice() {
     computerChoice = Math.floor(Math.random() * 3);
@@ -20,33 +31,40 @@ function getComputerChoice() {
     }
 }
 
-// User Choice
-
-function getHumanChoice(userChoice) {
-    userChoice = userChoice.toLowerCase();
-    if (userChoice === "rock" || userChoice === "paper" || userChoice === "scissors") {
-        return userChoice;
-    } else {
-        return ("Invalid Choice! Enter 'rock','paper' or 'scissors'.")
-    }
-}
 
 // // Single Round
 
 function playRound(humanChoice, computerChoice) {
-
     if (humanChoice === computerChoice) {
         result = "Its's a Tie.";
     } else {
         switch (humanChoice) {
             case "rock":
-                result = (computerChoice === "scissors") ? "You Win! Rock Beats Scissors" : "You Lose, Bot Get the Point";
+                if (computerChoice == "scissors") {
+                    humanScore += 1;
+                    result = "You Win! Paper Beats Rock"
+                } else {
+                    computerScore += 1;
+                    result = "You Lose, Bot Get the Point";
+                }
                 break;
             case "paper":
-                result = (computerChoice === "rock") ? "You Win! Paper Beats Rock" : "You Lose, Bot Get the Point";
+                if (computerChoice === "rock") {
+                    humanScore += 1;
+                    result = "You Win! Paper Beats Rock"
+                } else {
+                    computerScore += 1;
+                    result = "You Lose, Bot Get the Point";
+                }
                 break;
             case "scissors":
-                result = (computerChoice === "paper") ? "You Win! Scissors Beats Paper" : "You Lose, Bot Get the Point";
+                if (computerChoice === "paper") {
+                    humanScore += 1;
+                    result = "You Win! Paper Beats Rock"
+                } else {
+                    computerScore += 1;
+                    result = "You Lose, Bot Get the Point";
+                }
                 break;
             default:
                 result = "Invalid Choice";
@@ -55,13 +73,35 @@ function playRound(humanChoice, computerChoice) {
     return result;
 }
 
-const humanSelection = getHumanChoice(userChoice);
-const computerSelection = getComputerChoice();
+function playGame() {
 
-const roundResult = playRound(humanSelection, computerSelection);
+    for (i = 0; i < 5; i++) {
+        let userChoice = prompt("Enter your Choice..!");
+        humanSelection = getHumanChoice(userChoice);
+        computerSelection = getComputerChoice();
+        console.log("Your Choice : " + ' ' + humanSelection);
+        console.log("Bot Choice :" + " " + computerSelection);
 
-// Result Console
 
-console.log("Bot Choice :" + " " + getComputerChoice());
-console.log("Your Choice : " + ' ' + getHumanChoice());
-console.log(roundResult);
+        result = playRound(humanSelection, computerSelection)
+        console.log(result);
+
+        console.log(`Round ${i + 1}: -`);
+        console.log(`Your Score ${humanScore} `);
+        console.log(`Bot ${computerScore} `);
+
+    }
+    if (humanScore > computerScore) {
+        console.log("Congratulation! You Win The Game.")
+    } else if (humanScore < computerScore) {
+        console.log("Better Luck next Time! Bot Win The Game.");
+    } else {
+        console.log("Wooh! Its a tie.");
+    }
+
+}
+console.log(playGame());
+
+
+
+
