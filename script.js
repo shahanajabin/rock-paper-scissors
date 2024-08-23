@@ -75,7 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function stop() {
         if (humanScore === 5 || computerScore === 5) {
-            document.querySelector("button").disabled = true;
+            document.getElementById('rock').disabled = true;
+            document.getElementById('paper').disabled = true;
+            document.getElementById('scissors').disabled = true;
         }
     }
 
@@ -85,6 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('humanScore').textContent = humanScore;
         document.getElementById('computerScore').textContent = computerScore;
         document.querySelector('.outcome').textContent = "Choose your move.";
+
+        document.getElementById('rock').disabled = false;
+        document.getElementById('paper').disabled = false;
+        document.getElementById('scissors').disabled = false;
     }
 
     //  Changing into DOM 
