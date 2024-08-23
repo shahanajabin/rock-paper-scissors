@@ -4,8 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROCK-PAPER-SCISSORS</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <!--UI for Rock Paper Scissors-->
+    <div class="container">
+    <header>
+        <div class="navheader">
+            <h1>ROCK - PAPER - SCISSORS</h1>
+        </div><br>
+    </header>
+    <main>
+    <div class="button-btn">
+         <div class="rps">
+            <button id="rock" onclick="getHumanChoice('rock')"><img src="images/rock.jpeg" alt="rock"></button>
+            </div> 
+         <div class="rps">
+            <button id="paper" onclick="getHumanChoice('paper')"><img src="images/paper.jpeg" alt="paper"></button>
+            </div> 
+         <div class="rps">
+            <button id="scissors" onclick="getHumanChoice('scissors')"><img src="images/scissors.jpeg" alt="scissors"></button>
+        </div>   
+    </div><br>
+    
+    <div class="result">
+        <h1 class="round">ROUND</h1>
+        <h3 class="outcome">OutCome :-</h3>
+        
+    </div>
+    
+    <div class="score-board">
+        <h2 class="scorehead">Score Board</h2>
+        <table>
+            <tbody>
+            <tr>
+                <td id="userScore">0</td>
+                <td id="computerScore">0</td>
+            </tr>
+            </tbody>
+            <tfoot>
+                <th>Player</th>
+                <th>Bot</th>
+            </tfoot>
+        </table>
+    </div>
+    
+    <div class="resetbutton">
+        <button class="reset">Play Again</button>
+    </div>
+    
+    </main>
+    </div>
+    <!--JavaScript for Rock Paper Scissors-->
+    
     <script src="script.js"></script>
 </body>
 </html>

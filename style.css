@@ -1,0 +1,118 @@
+body {
+    margin: 0%;
+    border: 0cap;
+    background-color: #f8f0ec;
+    justify-content: center;
+}
+
+.navheader {
+    display: flex;
+    justify-content: center;
+    /* background-color: #a277ab; */
+    padding: 50px 0;
+}
+
+.navheader h1 {
+    font-size: 40px;
+    letter-spacing: 5px;
+    color: #000000;
+    font-family: inherit;
+}
+
+.button-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+#rock,
+#paper,
+#scissors {
+    display: inline;
+    height: auto;
+    width: auto;
+    border-radius: 10px;
+    border: none;
+    background-color: #f8f0ec;
+}
+
+img {
+    justify-content: center;
+    height: 160px;
+    width: 160px;
+    padding: 0%;
+    border-radius: 40px;
+}
+
+.rps:hover {
+    transform: scale(1.10);
+}
+
+.score-board {
+    width: 20rem;
+    margin: auto;
+    text-align: center;
+    height: 10rem;
+}
+
+.scorehead {
+    margin: 0;
+    padding: 15px;
+    border-bottom: 1px solid;
+    font-size: 30px;
+}
+
+.score-board table {
+    margin: 15px auto;
+    width: 100%;
+    font-size: 20px;
+    padding-right: 30px;
+}
+
+.score-board td {
+    font-size: 3rem;
+}
+
+.result h1 {
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #000000;
+    font-family: inherit;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+
+}
+
+.result h3 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #000000;
+    font-family: inherit;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.resetbutton {
+    text-align: center;
+    padding: 70px;
+}
+
+.reset {
+    text-align: center;
+    margin: 0%;
+    padding: 9px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid;
+    background-color: #f8f0ec;
+    transition: 0.5s;
+    font-family: monospace;
+}
+
+.reset:hover {
+    background-color: #ffffff;
+    /* background-color: #ead2c6; */
+}
