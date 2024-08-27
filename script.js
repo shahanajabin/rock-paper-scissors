@@ -33,28 +33,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 case "rock":
                     if (computerChoice === "scissors") {
                         humanScore += 1;
-                        result = "You Win! Paper Beats Rock"
+                        result = "You Win! Rock Beats Scissors."
                     } else {
                         computerScore += 1;
-                        result = "You Lose, Bot Get the Point";
+                        result = "You Lose! Paper Beats Rock.";
                     }
                     break;
                 case "paper":
                     if (computerChoice === "rock") {
                         humanScore += 1;
-                        result = "You Win! Paper Beats Rock"
+                        result = "You Win! Paper Beats Rock."
                     } else {
                         computerScore += 1;
-                        result = "You Lose, Bot Get the Point";
+                        result = "You Lose! Scissors Beats Paper.";
                     }
                     break;
                 case "scissors":
                     if (computerChoice === "paper") {
                         humanScore += 1;
-                        result = "You Win! Paper Beats Rock"
+                        result = "You Win! Scissors Beats Paper."
                     } else {
                         computerScore += 1;
-                        result = "You Lose, Bot Get the Point";
+                        result = "You Lose! Rock Beats Scissors.";
                     }
                     break;
             }
